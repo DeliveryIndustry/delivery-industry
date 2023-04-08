@@ -1,0 +1,37 @@
+.root
+  position: relative
+  background: $white
+  border-top: 1px solid $baseColor
+  padding: vw(30) vw(48)
+  z-index: 1
+
+  @include pc
+    padding: vwPc(30) vwPc(62)
+
+.container
+  @include pc
+    display: flex
+    justify-content: space-between
+
+.info
+  display: flex
+  font-size: vw(12)
+  gap: vw(12)
+  line-height: 1.7
+
+  @include sp
+    flex-direction: column
+
+  @include pc
+    gap: vwPc(24)
+    font-size: vwPc(12)
+    align-items: flex-start
+
+.copyright
+  font-size: vw(12)
+
+  @include sp
+    margin-top: vw(48)
+
+  @include pc
+    font-size: vwPc(12)

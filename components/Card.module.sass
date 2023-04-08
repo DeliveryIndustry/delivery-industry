@@ -1,0 +1,30 @@
+.root
+  width: 100%
+  overflow: hidden
+  font-size: vw(12)
+  letter-spacing: 0.04em
+  border: 1px solid $grayLight
+  border-radius: 4px
+  letter-spacing: 0.05em
+
+  @include pc
+    font-size: vwPc(12)
+
+.head
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: vw(8) vw(16)
+  font-weight: bold
+  background: $subColor
+  border-bottom: 1px solid $grayLight
+
+  @include pc
+    padding: vwPc(8) vwPc(16)
+
+.body
+  padding: vw(20)
+  background: $mainColor
+
+  @include pc
+    padding: vwPc(20)

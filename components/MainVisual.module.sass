@@ -1,0 +1,40 @@
+.root
+  position: relative
+  height: 100vh
+  background: $black
+
+.inner
+  position: fixed
+  z-index: 0
+  height: 100vh
+  width: 100%
+
+.title
+  position: absolute
+  letter-spacing: 0.05em
+  white-space: nowrap
+
+  @include sp
+    top: 50%
+    left: vw(30)
+    transform: translateY(-50%)
+
+  @include pc
+    bottom: vwPc(72)
+    left: vwPc(72)
+
+  &__sub
+    @include fontEnglish
+    font-size: vw(28)
+
+    @include pc
+      font-size: vwPc(52)
+
+  &__main
+    @include fontJapanese
+    font-size: vw(20)
+    margin-top: vw(16)
+
+    @include pc
+      font-size: vwPc(32)
+      margin-top: vwPc(20)

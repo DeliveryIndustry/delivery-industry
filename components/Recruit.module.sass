@@ -1,0 +1,97 @@
+.root
+  overflow: hidden
+  position: relative
+  background: $mainColor
+
+.inner
+  position: relative
+  z-index: 2
+
+  @include sp
+    padding: vw(80) vw(8) vw(64)
+
+  @include pc
+    padding: vwPc(220) 0 vwPc(64)
+
+  &::after
+    background: $baseColor
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    border-radius: 50%
+    transform: translate(80%, -90%)
+    width: vw(902)
+    height: vw(879)
+
+    @include pc
+      transform: translate(70%, -75%)
+      width: vwPc(902)
+      height: vwPc(879)
+
+.title
+  @include sp
+    padding: vw(52) 0 0 vw(30)
+
+  @include pc
+    position: absolute
+    top: vwPc(64)
+    left: vwPc(72)
+
+.contents
+  @include pc
+    display: flex
+    justify-content: space-between
+    width: calc(100% - #{vwPc(132)})
+    margin: auto
+
+.list
+  display: grid
+  grid-template-columns: 1fr
+  gap: vw(48) 0
+
+  @include pc
+    grid-template-columns: repeat(3, 1fr)
+    gap: vwPc(40)
+
+.cardImage
+  overflow: hidden
+  border-radius: 4px
+
+  img
+    width: 100%
+    height: auto
+
+.cardTextBox
+  padding: vw(12) vw(4)
+  padding-bottom: 0
+  letter-spacing: 0.05em
+
+  @include pc
+    padding: vwPc(12) vwPc(4)
+
+.cardTitle
+  font-size: vw(12)
+  font-weight: bold
+
+  @include pc
+    font-size: vwPc(12)
+
+.cardDesc
+  margin-top: vw(8)
+  font-size: vw(12)
+  line-height: 1.7
+
+  @include pc
+    margin-top: vwPc(8)
+    font-size: vwPc(12)
+
+.link
+  text-decoration: underline
+
+.button
+  display: table
+  margin: vw(64) auto 0
+
+  @include pc
+    margin-top: vwPc(72)

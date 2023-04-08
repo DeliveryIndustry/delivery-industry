@@ -1,0 +1,40 @@
+.root
+  position: relative
+  z-index: 1
+  display: block
+  width: vw(243)
+  padding: vw(19) 0
+  overflow: hidden
+  font-size: vw(16)
+  text-align: center
+  color: $white
+  background: $red
+  border: 1px solid $red
+  border-radius: 4px
+  transition: color 0.5s $easing, border 0.5s $easing
+
+  @include pc
+    width: vwPc(256)
+    padding: vwPc(22) 0
+    font-size: vwPc(16)
+
+  &::before
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    display: block
+    width: 120%
+    height: 100%
+    content: ''
+    background: $black
+    transition: transform 0.5s $easing
+    transform: scaleX(0) skewX(-25deg)
+    transform-origin: right top
+
+  @include hoverStyle
+    border: 1px solid $white
+
+    &::before
+      transform: scaleX(1) skewX(-25deg)
+      transform-origin: left top
