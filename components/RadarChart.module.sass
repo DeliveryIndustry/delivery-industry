@@ -1,0 +1,13 @@
+.root
+  transform: scale(0)
+  transform-origin: center
+
+  &.is-anime
+    animation: scale 0.6s $easing 0.5s forwards
+
+@keyframes scale
+  0%
+    transform: scale(0)
+
+  100%
+    transform: scale(1)
