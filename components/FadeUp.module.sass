@@ -1,0 +1,16 @@
+.fadeUp
+  opacity: 0
+  transition: opacity 0.6s $easing, transform 0.6s $easing
+
+  &.is-anime
+    animation: fadeUp 0.6s forwards
+
+@keyframes fadeUp
+  0%
+    will-change: opacity, transform
+    opacity: 0
+    transform: translateY(20px)
+
+  100%
+    opacity: 1
+    transform: translateY(0)

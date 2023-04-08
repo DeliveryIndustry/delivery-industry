@@ -1,0 +1,70 @@
+@use 'sass:math'
+
+// Color
+$black: #000
+$white: #fff
+$blue: #0176ff
+$blueLight: #5ac8fa
+$blueVeryLight: #a3e0fc
+$purple: #9747ff
+$purpleLight: #b984ff
+$green: #2ac610
+$gray: #bdbcbc
+$grayLight: #d9d9d9
+$red: #ff2e4b
+$redLight: #ffa9b5
+
+$baseColor: #262626
+$mainColor: $white
+$subColor: #f2f3f4
+
+// Size
+$spDesignSize: 375
+$pcDesignSize: 1280
+$spSize: 768
+$pcSize: $spSize + 1
+
+// Easing
+$easing: cubic-bezier(0.215, 0.61, 0.355, 1)
+
+// Font Family.
+@mixin fontMultiple
+  font-family: var(--font-libre-baskerville), var(--font-noto-serif-jp), serif
+
+@mixin fontJapanese
+  font-family: var(--font-noto-serif-jp), serif
+
+@mixin fontEnglish
+  font-family: var(--font-libre-baskerville), sans-serif
+
+// Media query
+@mixin sp
+  @media screen and (max-width: #{$spSize}px)
+    @content
+
+@mixin pc
+  @media screen and (min-width: #{$pcSize}px)
+    @content
+
+// Utils
+@mixin hoverStyle
+  @media (hover: hover)
+    &:hover
+      @content
+  @media (hover: none)
+    &:active
+      @content
+
+@mixin hoverOpacity
+  @include hoverStyle
+    opacity: 0.7
+    transition: opacity 0.3s ease
+
+@function vw($px, $size: $spDesignSize)
+  @return math.div($px, $size) * 100vw
+
+@function vwPc($px, $size: $pcDesignSize)
+  @return math.div($px, $size) * 100vw
+
+@mixin marker($color: $blueVeryLight, $percent: 72%)
+  background: linear-gradient(transparent #{$percent}, #{$color} #{$percent})

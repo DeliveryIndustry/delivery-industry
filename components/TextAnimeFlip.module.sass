@@ -1,0 +1,16 @@
+.root
+  clip-path: inset(0 100% 0 0)
+
+  @include sp
+    padding-top: 2px
+
+  &.is-anime
+    animation: flip 0.5s cubic-bezier(1, 0, 0, 1) 0.5s forwards
+
+@keyframes flip
+  from
+    will-change: clip-path
+    clip-path: inset(0 100% 0 0)
+
+  100%
+    clip-path: inset(0)

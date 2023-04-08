@@ -1,0 +1,102 @@
+.root
+  overflow: hidden
+  position: relative
+  background: $mainColor
+
+.inner
+  position: relative
+  padding: 0 0 vw(64)
+
+  @include pc
+    padding: vwPc(72) 0 vwPc(120)
+
+  &::before
+    background: $baseColor
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    border-radius: 50%
+    transform: translate(-50%, 53%)
+    width: vwPc(1000)
+    height: vwPc(800)
+    display: none
+
+    @include pc
+      display: block
+
+  &::after
+    background: $baseColor
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    border-radius: 50%
+    transform: translate(80%, -90%)
+    width: vw(902)
+    height: vw(879)
+
+    @include pc
+      transform: translate(70%, -75%)
+      width: vwPc(902)
+      height: vwPc(879)
+
+.title
+  @include sp
+    padding: vw(52) 0 0 vw(30)
+
+  @include pc
+    position: absolute
+    bottom: vwPc(72)
+    left: vwPc(52)
+
+.contents
+  @include pc
+    display: flex
+    justify-content: space-between
+    width: calc(100% - #{vwPc(132)})
+    margin: auto
+
+.lead
+  line-height: 1.5
+  font-size: vw(20)
+  letter-spacing: 0.04em
+
+  @include sp
+    padding: vw(44) 0 0 vw(30)
+
+  @include pc
+    font-size: vwPc(36)
+
+.message
+  letter-spacing: 0.08em
+  line-height: 2.4
+  padding-top: vw(68)
+  font-size: vw(12)
+
+  @include sp
+    padding-left: vw(30)
+
+  @include pc
+    font-size: vwPc(14)
+    padding: vwPc(40) vwPc(40) 0 0
+
+  &__block
+    display: block
+
+    & + &
+      margin-top: vw(24)
+
+      @include pc
+        margin-top: vwPc(20)
+
+.button
+  display: table
+  margin-top: vw(64)
+
+  @include sp
+    margin-right: auto
+    margin-left: auto
+
+  @include pc
+    margin-top: vwPc(72)
